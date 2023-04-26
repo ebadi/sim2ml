@@ -1,0 +1,347 @@
+{
+	"GeneralSettings": {
+		"Comment" : "Controlls the weather in the scene.",
+		"EnvironmentSettings": {
+			"Comment" : "The weather in the scenario. [Weather = Sunny, Rainy, RainyWithSun, Snowy, SnowyWithSun, Random]",
+			"Weather": "Sunny",
+			"Comment" : "The intensity of the precipitation. [Precipitation = 0 - 1]",
+			"Precipitation": 1,
+			"Comment" : "Time of day.[Hour = 0 - 23] [Minute = 0 - 59]",
+			"Hour": 12,
+			"Minute": 0
+		},
+		"Comment" : " (If the -ScenarioType- property is set to GenericScenarioMode this field will be used to handle the traffic.)",
+		"TrafficSettings": {
+			"UseGenericTraffic": true,
+			"GenericTrafficQuantities": [
+				{
+					"category": "Cars",
+					"quantity": 0
+				},
+				{
+					"category": "Trucks",
+					"quantity": 0
+				},
+				{
+					"category": "Busses",
+					"quantity": 0
+				},
+				{
+					"category": "Trams",
+					"quantity": 0
+				},
+				{
+					"category": "Motorcycles",
+					"quantity": 0
+				},
+				{
+					"category": "Pedestrians",
+					"quantity": 0
+				},
+				{
+					"category": "Bicycles",
+					"quantity": 0
+				},
+				{
+					"category": "Dears",
+					"quantity": 0
+				},
+				{
+					"category": "Mooses",
+					"quantity": 0
+				}
+			]
+		},
+		"Comment" : "Specify the settings of the camera/sensor/viewpoint",
+		"SensorSettings": {
+			"Comment" : "Set the camera properties.",
+			"Camera": {
+				"Aperture": 2.7999999999999998,
+				"FocalLength": 5000,
+				"Exposure": 10,
+				"ShutterSpeed": 125,
+				"Iso": 100,
+				"Fov": 50
+			},
+			"Comment" : "Radar settings used for the point cloud.",
+			"Radar": {
+				"UseRadar": true,
+				"Comment" : "How far ahead the radar will reach.",
+				"Reach": 10000,
+				"Comment" : "How wide (in degrees) the radar is horizontally.",
+				"HorizontalRange": 22.5,
+				"Comment" : "How wide (in degrees) the radar is vertically.",
+				"VerticalRange": 22.5,
+				"Comment" : "How many tracer per degree (horizontally)",
+				"HorizontalResolution": 1,
+				"Comment" : "How many tracer per degree (vertically)",
+				"VerticalResolution": 1
+			},
+			"Comment" : "Randomize viewpoints along the roads in the scene. (If true override the -Viewpoints- array.)",
+			"RandomizeViewpoints": false,
+			"Comment" : "An array of viewpoints in the scene.",
+			"Viewpoints": [
+				{
+					"Position": {
+						"X": -5680.1679462264246,
+						"Y": -2159.4266702405475,
+						"Z": 2267.2982261061798
+					},
+					"Rotation": {
+						"Roll": 3.5533164274457671e-14,
+						"Pitch": -36.33319091796875,
+						"Yaw": 57.390579223632812
+					},
+					"Comment" : "Activate this viewpoint.",
+					"Enabled": true
+				}
+			]
+		},
+		"Comment" : "The final image output settings.",
+		"OutputSettings": {
+			"Comment" : "How many images that will be saved",
+			"FrameCount": 100,
+			"Comment" : "The resolution of the outputted images.",
+			"ImageSize": {
+				"x": 512,
+				"y": 512
+			},
+			"Comment" : "Where to save the outputted images.",
+			"OutputDirectory": "SomePath",
+			"Comment" : "Filters to export.",
+			"FilterSettings": [
+				{
+					"Comment" : "Name of the filter.",
+					"FilterName": "Normal",
+					"Comment" : "Format of the image. [OutputFormat = PNG, EXR, JPG]",
+					"OutputFormat": "PNG",
+					"Comment" : "Whether to export this filter or not.",
+					"Enabled": true
+				},
+				{
+					"FilterName": "Distorted",
+					"OutputFormat": "PNG",
+					"Enabled": false
+				},
+				{
+					"FilterName": "Depth",
+					"OutputFormat": "EXR",
+					"Enabled": true
+				},
+				{
+					"FilterName": "Segmentation",
+					"OutputFormat": "PNG",
+					"Enabled": true
+				},
+				{
+					"FilterName": "PlateSegmentation",
+					"OutputFormat": "PNG",
+					"Enabled": true
+				}
+			]
+		}
+	},
+	"Comment" : "The -Scene- is what scene the simulation will be run in. [Highway, CountryRoad, Akareplatsen]",
+	"Scene": "Highway",
+	"Comment" : "The -ScenarioType- property controls how the traffic in will be handled. There are two valid values for this property.",
+	"Comment" : "GenericScenarioMode: Will use the GeneralSettings --> TrafficSettings to handle the traffic.",
+	"Comment" : "SpecificScenarioMode: Will use the ScenarioActors to handle the traffic.",
+	"ScenarioType": "SpecificScenarioMode",
+	"Comment" : "(If the -ScenarioType- property is set to SpecificScenarioMode this field will be used to handle the traffic.)",
+	"Comment" : "Holds all cars/trucks/humans/animals/lights/waypoints that describes the scenario.",
+	"ScenarioActors": {
+		"Comment" : "-Navigation- actors are used by -Dynamic- actors to describe how they will move.",
+		"Navigation": {
+			"Comment" : "An array of all waypoints in the scene. A waypoint is a point in the scene.",
+			"Waypoints": [
+				{
+					"Comment" : "The visual UI marker seen by the user. Used to change the properties of the class.",
+					"MarkerClass": "BP_Marker_Waypoint_C",
+					"Comment" : "The ID of this waypoint. Used by -Dynamic- actors to access this waypoint.",
+					"Id": "BP_Marker_Waypoint_C_0",
+					"Comment" : "The waypoint class. [BP_Waypoints_C]",
+					"ClassToSpawn": "BP_Waypoints_C",
+					"Comment" : "Where in the world the waypoint is located.",
+					"Position": {
+						"X": -4474.7880297354131,
+						"Y": 898.95705395779635,
+						"Z": 147.26964864177353
+					},
+					"Comment" : "The rotation of the waypoint.",
+					"Rotation": {
+						"Roll": 9.9924761798320105e-08,
+						"Pitch": 2.2486764805762505e-07,
+						"Yaw": 23.894935607910156
+					},
+					"Comment" : "The speed the -Dynamic- actor will have when driving to this waypoint. OBS: Can be overwritten by the max speed of the -Dynamic- actor using this waypoint.",
+					"TargetSpeed": 50,
+					"Comment" : "How close the -Dynamic- actor needs to be to this waypoint to consider as reached.",
+					"AcceptanceRadius": 1
+				}
+			],
+			"Paths": []
+		},
+		"Comment" : "-Dynamic- actors are actors that can move. Cars/trucks/humans/animals. An array of all vehicles in the scene. (Cars / trucks)",
+		"Dynamic": {
+			"Vehicles": [
+				{
+					"Comment" : "Car example:",
+					"Comment" : "The vehicle class. [BP_vehicle01_Van_C, BP_vehicle02_Car_C, BP_vehicle03_Car_C, BP_vehicle05_Car_C, BP_vehicle06_Car_C, BP_vehicle07_Car_C]",
+					"ClassToSpawn": "BP_vehicle01_Van_C",
+					"Comment" : "The speed of the vehicle in the start of the scenario.",
+					"InitialSpeed": 0,
+					"Comment" : "The highest possible speed of the vehicle.",
+					"MaxSpeed": 50,
+					"Comment" : "After the scenario starts, wait this long before activating the movement of this vehicle.",
+					"StartDelay": 0,
+					"Comment" : "License plate information.",
+					"LicensePlate": {
+						"Comment" : "Determines the color of this licene plate in the segmentation output. [0 - 255]",
+						"SegmentationId": 50,
+						"Comment" : "0 - 3 letters describing the nationality of the licenspelate.",
+						"Nationality": "abc",
+						"Comment" : "0 - 7 letters describing the license plate number registration.",
+						"PlateNumber": "abc1234",
+						"Comment" : "An image that can be displayed on the license plate. (Will override -Nationality- and -PlateNumber- if used.)",
+						"ImagePath": ""
+					},
+					"Comment" : "The model of the vehicle. [Model 1, Model 2, Model 3, Model 4, Model 5, Model 6]",
+					"Model": "Model 1",
+					"Comment" : "The color of the vehicle. [White, Silver, Black, Gray, Blue, Red, Beige, Green]",
+					"Color": "White",
+					"Comment" : "An array of -Navigation- actors that the vehicle will move to in order. Use the ID of the waypoint/Road",
+					"Path": [
+						"BP_Marker_Waypoint_C_0",
+						"BP_TrafficSpline_C_1"
+					],
+					"Comment" : "The visual UI marker seen by the user. Used to change the properties of the class.",
+					"MarkerClass": "BP_Marker_Vehicle_Car_C",
+					"Comment" : "The ID of this vehicle.",
+					"Id": "BP_Marker_Vehicle_Car_C_0",
+					"Comment" : "Where in the world the vehicle is initially located.",
+					"Position": {
+						"X": -5399.676352454504,
+						"Y": 536.75556380175158,
+						"Z": 147.26983152876801
+					},
+					"Comment" : "The rotation of the vehicle.",
+					"Rotation": {
+						"Roll": 8.9985867646191764e-08,
+						"Pitch": 2.2902611362951575e-07,
+						"Yaw": 21.386129379272461
+					}
+				},
+				{
+					"Comment" : "Trueck example:",
+					"Comment" : "[BP_vehicle04_Truck_C, BP_vehicle08_Truck_C, BP_vehicle11_Truck_C]",
+					"ClassToSpawn": "BP_vehicle11_Truck_C",
+					"InitialSpeed": 0,
+					"MaxSpeed": 50,
+					"StartDelay": 0,
+					"LicensePlate": {
+						"SegmentationId": 50,
+						"Nationality": "",
+						"PlateNumber": "",
+						"ImagePath": ""
+					},
+					"Comment" : "[Model 1, Model 2, Model 3]",
+					"Model": "Model 3",
+					"Color": "Black",
+					"Path": [],
+					"MarkerClass": "BP_Marker_Vehicle_Truck_C",
+					"Id": "BP_Marker_Vehicle_Truck_C_2",
+					"Position": {
+						"X": -6135.8939498319905,
+						"Y": 2416.2200591212218,
+						"Z": 118.17417461817695
+					},
+					"Rotation": {
+						"Roll": -3.881251335144043,
+						"Pitch": 2.2578613758087158,
+						"Yaw": 24.432929992675781
+					}
+				}
+			],
+			"Comment" : "An array of all characters in the scene. (Humans / animals)",
+			"Characters": [
+				{
+					"Comment" : "Animal example",
+					"InitialSpeed": 0,
+					"MaxSpeed": 12,
+					"StartDelay": 0,
+					"Path": [],
+					"MarkerClass": "BP_Marker_Character_Animal_C",
+					"Id": "BP_Marker_Character_Animal_C_0",
+					"Comment" : "[BP_Animal_Moose_C]",
+					"ClassToSpawn": "BP_Animal_Moose_C",
+					"Position": {
+						"X": -5773.4392361154005,
+						"Y": 1420.8849597856004,
+						"Z": 99.999890936776637
+					},
+					"Rotation": {
+						"Roll": -0,
+						"Pitch": 0,
+						"Yaw": 24.05047607421875
+					}
+				},
+				{
+					"Comment" : "Human example",
+					"Comment" : "[Male, Female]",
+					"Gender": "Female",
+					"Comment" : "[Type1, Type2, Type3]",
+					"BodyType": "Type1",
+					"Comment" : "[Phone, Purse, Cup]",
+					"Accessory": "Phone",
+					"InitialSpeed": 0,
+					"MaxSpeed": 6,
+					"StartDelay": 0,
+					"Path": [],
+					"MarkerClass": "BP_Marker_Character_Human_C",
+					"Id": "BP_Marker_Character_Human_C_0",
+					"ClassToSpawn": "BP_Pedestrian_FTN_C",
+					"Position": {
+						"X": -5521.8511916951848,
+						"Y": 771.8919915416916,
+						"Z": 147.2697658052366
+					},
+					"Rotation": {
+						"Roll": 1.0053484089667108e-07,
+						"Pitch": 2.2459555282239307e-07,
+						"Yaw": 24.05047607421875
+					}
+				}
+			]
+		},
+		"Comment" : "An array of all light sources in the scene (Not including the sun)",
+		"Lights": {
+			"SpotLights": [
+				{
+					"MarkerClass": "BP_Marker_Light_C",
+					"Id": "BP_Marker_Light_C_0",
+					"ClassToSpawn": "BP_ConeLight_C",
+					"Position": {
+						"X": -4054.9823454742782,
+						"Y": -574.27234331715022,
+						"Z": 147.26961899420485
+					},
+					"Rotation": {
+						"Roll": 0,
+						"Pitch": 0,
+						"Yaw": 0
+					},
+					"Comment" : "// How high from the ground the light is located. [100 - 2000]",
+					"Height": 2000,
+					"Comment" : "// Rotation pitch override. [-89 - 89]",
+					"Pitch": 89,
+					"Comment" : "// Rotation yaw override. [0 - 360]",
+					"Yaw": 360,
+					"Comment" : "// How bright the light source is. [50 - 16384]",
+					"Intensity": 16384,
+					"Comment" : "// How wide/narrow the spread of the light source is. [25 - 1500]",
+					"Spread": 1500 
+				}
+			]
+		}
+	}
+}

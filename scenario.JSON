@@ -1,0 +1,241 @@
+{
+	"GeneralSettings":
+	{
+		"EnvironmentSettings":
+		{
+			"Weather": "Sunny",
+			"Precipitation": 1,
+			"Hour": 12,
+			"Minute": 0
+		},
+		"TrafficSettings":
+		{
+			"UseGenericTraffic": true,
+			"GenericTrafficQuantities": [
+				{
+					"category": "Cars",
+					"quantity": 0
+				},
+				{
+					"category": "Trucks",
+					"quantity": 0
+				},
+				{
+					"category": "Busses",
+					"quantity": 0
+				},
+				{
+					"category": "Trams",
+					"quantity": 0
+				},
+				{
+					"category": "Motorcycles",
+					"quantity": 0
+				},
+				{
+					"category": "Pedestrians",
+					"quantity": 0
+				},
+				{
+					"category": "Bicycles",
+					"quantity": 0
+				},
+				{
+					"category": "Dears",
+					"quantity": 0
+				},
+				{
+					"category": "Mooses",
+					"quantity": 0
+				}
+			]
+		},
+		"SensorSettings":
+		{
+			"Camera":
+			{
+				"Aperture": 2.7999999999999998,
+				"FocalLength": 5000,
+				"Exposure": 10,
+				"ShutterSpeed": 125,
+				"Iso": 100,
+				"Fov": 10
+			},
+			"Radar":
+			{
+				"UseRadar": false,
+				"Reach": 10000,
+				"HorizontalRange": 22.5,
+				"VerticalRange": 22.5,
+				"HorizontalResolution": 1,
+				"VerticalResolution": 1
+			},
+			"RandomizeViewpoints": false,
+			"Viewpoints": [
+				{
+					"Position":
+					{
+						"X": -12808.700609463691,
+						"Y": -1265.5486387060719,
+						"Z": 1107.5365144781006
+					},
+					"Rotation":
+					{
+						"Roll": 8.9454031476036283e-14,
+						"Pitch": -13.264007568359375,
+						"Yaw": 7.8303694725036621
+					},
+					"Enabled": true
+				}
+			]
+		},
+		"OutputSettings":
+		{
+			"FrameCount": 7,
+			"ImageSize":
+			{
+				"x": 2048,
+				"y": 2048
+			},
+			"OutputDirectory": "C:\\Users\\ITDforskning\\Desktop\\simulator2camea\\results",
+			"FilterSettings": [
+				{
+					"FilterName": "Normal",
+					"OutputFormat": "PNG",
+					"Enabled": true
+				},
+				{
+					"FilterName": "Distorted",
+					"OutputFormat": "PNG",
+					"Enabled": false
+				},
+				{
+					"FilterName": "Depth",
+					"OutputFormat": "EXR",
+					"Enabled": false
+				},
+				{
+					"FilterName": "Segmentation",
+					"OutputFormat": "PNG",
+					"Enabled": false
+				},
+				{
+					"FilterName": "PlateSegmentation",
+					"OutputFormat": "PNG",
+					"Enabled": true
+				}
+			]
+		}
+	},
+	"Scene": "Akareplatsen",
+	"ScenarioType": "SpecificScenarioMode",
+	"ScenarioActors":
+	{
+		"Navigation":
+		{
+			"Waypoints": [
+				{
+					"MarkerClass": "BP_Marker_Waypoint_C",
+					"Id": "BP_Marker_Waypoint_C_2147393651",
+					"ClassToSpawn": "BP_Waypoints_C",
+					"Position":
+					{
+						"X": -10721.043341271552,
+						"Y": -910.37653890118622,
+						"Z": -6.9999409583606393
+					},
+					"Rotation":
+					{
+						"Roll": -0,
+						"Pitch": 0,
+						"Yaw": 6.2701754570007324
+					},
+					"TargetSpeed": 50,
+					"AcceptanceRadius": 1
+				},
+				{
+					"MarkerClass": "BP_Marker_Waypoint_C",
+					"Id": "BP_Marker_Waypoint_C_2147453746",
+					"ClassToSpawn": "BP_Waypoints_C",
+					"Position":
+					{
+						"X": -12360.090990934657,
+						"Y": -1433.8499823541674,
+						"Z": -6.9902517341647581
+					},
+					"Rotation":
+					{
+						"Roll": -0.0010942388325929642,
+						"Pitch": -0.001230867812409997,
+						"Yaw": 6.2709341049194336
+					},
+					"TargetSpeed": 50,
+					"AcceptanceRadius": 1
+				},
+				{
+					"MarkerClass": "BP_Marker_Waypoint_C",
+					"Id": "BP_Marker_Waypoint_C_2147393467",
+					"ClassToSpawn": "BP_Waypoints_C",
+					"Position":
+					{
+						"X": -12174.950768814462,
+						"Y": -1261.8327819951405,
+						"Z": -6.9927301691172943
+					},
+					"Rotation":
+					{
+						"Roll": -0.00018105954222846776,
+						"Pitch": -0.0016479096375405788,
+						"Yaw": 6.270301342010498
+					},
+					"TargetSpeed": 50,
+					"AcceptanceRadius": 1
+				}
+			],
+			"Paths": []
+		},
+		"Dynamic":
+		{
+			"Vehicles": [
+				{
+					"ClassToSpawn": "BP_vehicle01_Van_C",
+					"InitialSpeed": 60,
+					"MaxSpeed": 100,
+					"StartDelay": 0,
+					"LicensePlate":
+					{
+						"SegmentationId": 50,
+						"Nationality": "SE",
+						"PlateNumber": "1A3C4E6",
+						"ImagePath": ""
+					},
+					"Model": "Model 1",
+					"Color": "Black",
+					"Path": [
+						"BP_Marker_Waypoint_C_2147393651",
+						"BP_Marker_Waypoint_C_2147393467"
+					],
+					"MarkerClass": "BP_Marker_Vehicle_Car_C",
+					"Id": "BP_Marker_Vehicle_Car_C_2147393893",
+					"Position":
+					{
+						"X": -7372.263616341399,
+						"Y": -743.09975384487484,
+						"Z": -7.0001110792106829
+					},
+					"Rotation":
+					{
+						"Roll": 0,
+						"Pitch": 0,
+						"Yaw": -177.14036560058594
+					}
+				}
+			],
+			"Characters": []
+		},
+		"Lights":
+		{
+			"SpotLights": []
+		}
+	}
+}

@@ -1,0 +1,219 @@
+{
+    "GeneralSettings": {
+        "EnvironmentSettings": {
+            "Weather": "Sunny",
+            "Precipitation": 1,
+            "Hour": 12,
+            "Minute": 4
+        },
+        "TrafficSettings": {
+            "UseGenericTraffic": true,
+            "GenericTrafficQuantities": [
+                {
+                    "category": "Cars",
+                    "quantity": 0
+                },
+                {
+                    "category": "Trucks",
+                    "quantity": 0
+                },
+                {
+                    "category": "Busses",
+                    "quantity": 0
+                },
+                {
+                    "category": "Trams",
+                    "quantity": 0
+                },
+                {
+                    "category": "Motorcycles",
+                    "quantity": 0
+                },
+                {
+                    "category": "Pedestrians",
+                    "quantity": 0
+                },
+                {
+                    "category": "Bicycles",
+                    "quantity": 0
+                },
+                {
+                    "category": "Dears",
+                    "quantity": 0
+                },
+                {
+                    "category": "Mooses",
+                    "quantity": 0
+                }
+            ]
+        },
+        "SensorSettings": {
+            "Camera": {
+                "Aperture": 3.0,
+                "FocalLength": 5020.0,
+                "Exposure": 11.0,
+                "ShutterSpeed": 127.0,
+                "Iso": 102.0,
+                "Fov": 12.0
+            },
+            "Radar": {
+                "UseRadar": false,
+                "Reach": 10000,
+                "HorizontalRange": 22.7,
+                "VerticalRange": 22.7,
+                "HorizontalResolution": 1.2,
+                "VerticalResolution": 1.2
+            },
+            "RandomizeViewpoints": false,
+            "Viewpoints": [
+                {
+                    "Position": {
+                        "X": -12806.70060946369,
+                        "Y": -1263.5486387060719,
+                        "Z": 1109.5365144781006
+                    },
+                    "Rotation": {
+                        "Roll": 0.20000000000008947,
+                        "Pitch": -13.064007568359376,
+                        "Yaw": 8.030369472503661
+                    },
+                    "Enabled": true
+                }
+            ]
+        },
+        "OutputSettings": {
+            "FrameCount": 7,
+            "ImageSize": {
+                "x": 2048,
+                "y": 2048
+            },
+            "OutputDirectory": "C:\\Users\\ITDforskning\\Desktop\\simulator2camea\\results\\2023-03-31-09-16-59\\scenario_2",
+            "FilterSettings": [
+                {
+                    "FilterName": "Normal",
+                    "OutputFormat": "PNG",
+                    "Enabled": true
+                },
+                {
+                    "FilterName": "Distorted",
+                    "OutputFormat": "PNG",
+                    "Enabled": false
+                },
+                {
+                    "FilterName": "Depth",
+                    "OutputFormat": "EXR",
+                    "Enabled": false
+                },
+                {
+                    "FilterName": "Segmentation",
+                    "OutputFormat": "PNG",
+                    "Enabled": false
+                },
+                {
+                    "FilterName": "PlateSegmentation",
+                    "OutputFormat": "PNG",
+                    "Enabled": true
+                }
+            ]
+        }
+    },
+    "Scene": "Akareplatsen",
+    "ScenarioType": "SpecificScenarioMode",
+    "ScenarioActors": {
+        "Navigation": {
+            "Waypoints": [
+                {
+                    "MarkerClass": "BP_Marker_Waypoint_C",
+                    "Id": "BP_Marker_Waypoint_C_2147393651",
+                    "ClassToSpawn": "BP_Waypoints_C",
+                    "Position": {
+                        "X": -10719.043341271552,
+                        "Y": -908.3765389011862,
+                        "Z": -4.999940958360639
+                    },
+                    "Rotation": {
+                        "Roll": 0.2,
+                        "Pitch": 0.2,
+                        "Yaw": 6.470175457000733
+                    },
+                    "TargetSpeed": 51.0,
+                    "AcceptanceRadius": 1
+                },
+                {
+                    "MarkerClass": "BP_Marker_Waypoint_C",
+                    "Id": "BP_Marker_Waypoint_C_2147453746",
+                    "ClassToSpawn": "BP_Waypoints_C",
+                    "Position": {
+                        "X": -12358.090990934657,
+                        "Y": -1431.8499823541674,
+                        "Z": -4.990251734164758
+                    },
+                    "Rotation": {
+                        "Roll": 0.19890576116740705,
+                        "Pitch": 0.19876913218759001,
+                        "Yaw": 6.470934104919434
+                    },
+                    "TargetSpeed": 51.0,
+                    "AcceptanceRadius": 1
+                },
+                {
+                    "MarkerClass": "BP_Marker_Waypoint_C",
+                    "Id": "BP_Marker_Waypoint_C_2147393467",
+                    "ClassToSpawn": "BP_Waypoints_C",
+                    "Position": {
+                        "X": -12172.950768814462,
+                        "Y": -1259.8327819951405,
+                        "Z": -4.992730169117294
+                    },
+                    "Rotation": {
+                        "Roll": 0.19981894045777154,
+                        "Pitch": 0.19835209036245943,
+                        "Yaw": 6.470301342010498
+                    },
+                    "TargetSpeed": 51.0,
+                    "AcceptanceRadius": 1
+                }
+            ],
+            "Paths": []
+        },
+        "Dynamic": {
+            "Vehicles": [
+                {
+                    "ClassToSpawn": "BP_vehicle01_Van_C",
+                    "InitialSpeed": 10,
+                    "MaxSpeed": 102.0,
+                    "StartDelay": 0.6000000000000001,
+                    "LicensePlate": {
+                        "SegmentationId": 50,
+                        "Nationality": "SE",
+                        "PlateNumber": "ZDKWISD",
+                        "ImagePath": ""
+                    },
+                    "Model": "Model 4",
+                    "Color": "Black",
+                    "Path": [
+                        "BP_Marker_Waypoint_C_2147393651",
+                        "BP_Marker_Waypoint_C_2147393467"
+                    ],
+                    "MarkerClass": "BP_Marker_Vehicle_Car_C",
+                    "Id": "BP_Marker_Vehicle_Car_C_2147393893",
+                    "Position": {
+                        "X": -7370.263616341399,
+                        "Y": -741.0997538448748,
+                        "Z": -5.000111079210683
+                    },
+                    "Rotation": {
+                        "Roll": 0.2,
+                        "Pitch": 0.2,
+                        "Yaw": -176.94036560058595
+                    }
+                }
+            ],
+            "Characters": []
+        },
+        "Lights": {
+            "SpotLights": []
+        }
+    },
+    "id": "2"
+}

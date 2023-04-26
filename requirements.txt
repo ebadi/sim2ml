@@ -1,0 +1,3 @@
+matplot
+opencv-python
+nested-lookup==0.2.25
