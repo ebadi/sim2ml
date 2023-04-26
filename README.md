@@ -1,3 +1,4 @@
+# Scenario Manipulator
 ### Instruction
 Build a scenario using the simulator and save it as [`scenario.JSON`](scenario.JSON). You can see an example of such file [here](scenario.JSON). The important fields in the json file is described [here](InputExample.JSON)
 
@@ -73,7 +74,7 @@ The BERGE simulator offers a diverse set of sensor models, including cameras, ca
 ![](logos/depth.png)
 ![](logos/segmentation.png)
 
-### LP segmentation
+### semantic segmentation
 Semantic segmentation of a scene in BERGE simulator
 
 ![](logos/l5.png)
