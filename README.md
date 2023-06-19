@@ -3,16 +3,16 @@
 Build a scenario using the simulator and save it as [`scenario.JSON`](scenario.JSON). You can see an example of such file [here](scenario.JSON). The important fields in the json file is described [here](InputExample.JSON)
 
 - place the simulator (Deccq_VX.0.a.b) in the root directory. (tested on V3.0.0.5)
-- place the `scenario.JSON` beside `scenariogenerator.py`
+- place the `scenario.JSON` beside `scenario-manipulator.py`
 - install python dependencies (see `requirements.txt`) 
-- run `python scenariogenerator.py` to generate scenarios
+- run `python scenario-manipulator.py` to generate scenarios
 - make sure that there is no issue and output folders and files are created inside `results` directory
 - Place a check to ensure that noise value is in the correct range
 
 ```
 │ Scenario.json
 │
-│ ScenarioGenerator (vectorize)
+│ ScenarioManipulator (vectorize)
 │
 │ ┌──────────┐    ┌─────────────────┐        Berge Simularor
 └─► Vector_1 │    │ Scenario_1.json ├─────────┬───────────────┐
@@ -21,7 +21,7 @@ Build a scenario using the simulator and save it as [`scenario.JSON`](scenario.J
   │ Vector_n │    │ Scenario_n.json │         │               │
   │          │    │                 │         │               │
   └──────────┘    └─────────────────┘         │               │
-     │      ScenarioGenerator (mutate)        │               │
+     │      ScenarioManipulator (mutate)      │               │
      │                                        │               │
      │                                        │               │
      │             ┌──────────────────────────▼──┐    ┌───────▼────────────────────────────────┐
@@ -31,9 +31,9 @@ Build a scenario using the simulator and save it as [`scenario.JSON`](scenario.J
      │             │ Scenario_1/Normal/img_m.png │    │ Scenario_1/PlateSegmentation/img_m.png │
      │             └─────────────┬───────────────┘    └───────────────────────┬────────────────┘
      │                           │                                            │
-     │   ScenarioGenerator (CAMEA│LP detector)                                │
+     │   ScenarioManipulator (CAMEA│LP detector)                              │
      │                           │                                            │
-     │           ┌───────────────▼─────────────────┐       ScenarioGenerator  │
+     │           ┌───────────────▼─────────────────┐       ScenarioManipulator│
      │           │ Scenario_1/Annotation/img_1.png │       (metric)           │
      │           │ Scenario_1/Annotation/img_2.png ├──────────────┐ Distance  │
      │           │ ...                             │              │ -IoU      │
