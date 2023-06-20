@@ -97,7 +97,7 @@
 				"x": 2048,
 				"y": 2048
 			},
-			"OutputDirectory": "C:\\Users\\ITDforskning\\Desktop\\simulator2camea\\results",
+			"OutputDirectory": "C:\\Users\\ITDforskning\\Desktop\\sim2ml\\results",
 			"FilterSettings": [
 				{
 					"FilterName": "Normal",
