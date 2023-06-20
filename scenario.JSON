@@ -54,11 +54,11 @@
 		{
 			"Camera":
 			{
-				"Aperture": 2.7999999999999998,
+				"Aperture": 1.8,
 				"FocalLength": 5000,
-				"Exposure": 10,
-				"ShutterSpeed": 125,
-				"Iso": 100,
+				"Exposure": 7,
+				"ShutterSpeed": 30,
+				"Iso": 80,
 				"Fov": 10
 			},
 			"Radar":
