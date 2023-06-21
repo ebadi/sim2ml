@@ -26,7 +26,7 @@ if __name__ == '__main__':
             Y.append(Yi)
             
 
-# weather, speed, hour, precipitation, #IMAGE1 to IMAGE4 OCR RESULTS --> iou [error =10000], lev[error =20], box_score[error=0], ocr_score[error=0], 
+# speed, weather, hour, precipitation, #IMAGE1 to IMAGE4 OCR RESULTS --> iou [error =10000], lev[error =20], box_score[error=0], ocr_score[error=0], 
 
 
 print(Y)

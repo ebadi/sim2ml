@@ -29,7 +29,7 @@ def range_with_floats(start, stop, step):
 if __name__ == "__main__":
     for weather in ("Sunny", "RainyWithSun", "Rainy", "SnowyWithSun", "Snowy"):  # NOT ORDERED
         for speed in range(125, 50, -25): 
-            for hour in range(0, 23, 5): # NOT ORDERED
+            for hour in range(0, 23, 4): # NOT ORDERED
                 for precipitation in range_with_floats(0, 1, 0.25): # For sunny weather this value doesn't make sense
                     scenario_id = "speed=" + str(speed) + ",weather=" + weather  + ",hour=" + str(hour)  + ",precipitation=" + str(precipitation) 
                     scenario_id_dir  = os.path.join(cwd_timestamp, "scenario_" + scenario_id)
