@@ -29,7 +29,7 @@ def range_with_floats(start, stop, step):
 if __name__ == "__main__":
     for weather in ("Sunny", "RainyWithSun", "Rainy", "SnowyWithSun", "Snowy"):  # NOT ORDERED
         for speed in range(140, 70, -10): 
-            for hour in range(9, 23, 4): # NOT ORDERED
+            for hour in range(0, 23, 4): # NOT ORDERED
                 for precipitation in range_with_floats(0, 1, 0.25): # For sunny weather this value doesn't make sense
                     scenario_id = "speed=" + str(speed) + ",weather=" + weather  + ",hour=" + str(hour)  + ",precipitation=" + str(precipitation) 
                     scenario_id_dir  = os.path.join(cwd_timestamp, "scenario_" + scenario_id)
@@ -73,7 +73,7 @@ if __name__ == "__main__":
                                     json_result = licenseplatedetector.licensePlateDetect(imagefile.path)
                                     result_json_file, result_image_file = licenseplatedetector.save_annotation(json_result, imagefile, annotation_dir)
                                     segmentation_filename = os.path.join(scenario_path_new, 'PlateSegmentation', imagefile.name)
-                                    result = distance.get_distance_metrics(result_json_file, segmentation_filename, mutation.validPlateNumbers)
+                                    result = distance.get_distance_metrics(result_json_file, segmentation_filename, [vec.data['ScenarioActors']['Dynamic']['Vehicles'][0]['LicensePlate']['PlateNumber']] )
                                 except Exception as excepttion_error:
                                     print("ERROR: something went wrong!" + str(excepttion_error))
                                     pass

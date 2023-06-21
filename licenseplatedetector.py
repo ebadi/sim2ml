@@ -29,7 +29,7 @@ def licensePlateDetect(image_path):
 
 
 def save_annotation(json_content, imagefile, annotation_dir):
-    plt.cla()
+    plt.clf()
     plt.ioff()
     plt.figure(figsize = (16,16), dpi= 256) # 2048 = 128 * 16
 
