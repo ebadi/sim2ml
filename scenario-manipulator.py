@@ -11,9 +11,7 @@ import distance
 import json
 import time
 
-
 passedtime = time.time()
-
 
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 # timestamp = '2023-04-06-16-51-18'
