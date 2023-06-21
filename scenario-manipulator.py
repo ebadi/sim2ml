@@ -28,7 +28,7 @@ def range_with_floats(start, stop, step):
 
 if __name__ == "__main__":
     for weather in ("Sunny", "RainyWithSun", "Rainy", "SnowyWithSun", "Snowy"):  # NOT ORDERED
-        for speed in range(150, 70, -10): 
+        for speed in range(140, 70, -10): 
             for hour in range(9, 23, 4): # NOT ORDERED
                 for precipitation in range_with_floats(0, 1, 0.25): # For sunny weather this value doesn't make sense
                     scenario_id = "speed=" + str(speed) + ",weather=" + weather  + ",hour=" + str(hour)  + ",precipitation=" + str(precipitation) 
@@ -68,17 +68,17 @@ if __name__ == "__main__":
                         if imagefile.is_file():
                             print("\nProcessing Image", imagefile.name)
                             result = None
-                            # while result is None:
-                            #     try:
-                            #         json_result = licenseplatedetector.licensePlateDetect(imagefile.path)
-                            #         result_json_file, result_image_file = licenseplatedetector.save_annotation(json_result, imagefile, annotation_dir)
-                            #         segmentation_filename = os.path.join(scenario_path_new, 'PlateSegmentation', imagefile.name)
-                            #         result = distance.get_distance_metrics(result_json_file, segmentation_filename, mutation.validPlateNumbers)
-                            #     except Exception as excepttion_error:
-                            #         print("ERROR: something went wrong!" + str(excepttion_error))
-                            #         pass
-                            # distances.append(result)
-                        # print("Writing distance info: ", distance_filename )
+                            while result is None:
+                                try:
+                                    json_result = licenseplatedetector.licensePlateDetect(imagefile.path)
+                                    result_json_file, result_image_file = licenseplatedetector.save_annotation(json_result, imagefile, annotation_dir)
+                                    segmentation_filename = os.path.join(scenario_path_new, 'PlateSegmentation', imagefile.name)
+                                    result = distance.get_distance_metrics(result_json_file, segmentation_filename, mutation.validPlateNumbers)
+                                except Exception as excepttion_error:
+                                    print("ERROR: something went wrong!" + str(excepttion_error))
+                                    pass
+                            distances.append(result)
+                        print("Writing distance info: ", distance_filename )
                         with open(distance_filename, "w") as outfile:
                             outfile.write(json.dumps(distances, indent=4))
                     print("TIME to CAMEA server finished:",  time.time()  - passedtime )
