@@ -1,13 +1,25 @@
 # Scenario Manipulator
-### Instruction
-Build a scenario using the simulator and save it as [`scenario.JSON`](scenario.JSON). You can see an example of such file [here](scenario.JSON). The important fields in the json file is described [here](InputExample.JSON)
 
-- place the simulator (Deccq_VX.0.a.b) in the root directory. (tested on V3.0.0.5)
-- place the `scenario.JSON` beside `scenario-manipulator.py`
-- install python dependencies (see `requirements.txt`) 
-- run `python scenario-manipulator.py` to generate scenarios
-- make sure that there is no issue and output folders and files are created inside `results` directory
-- Place a check to ensure that noise value is in the correct range
+### Introduction
+
+The incorporation of machine learning (ML) components presents challenges to the verification and validation (V&V) process due to the inherent opacity of ML systems. We introduce a tool-chain for generating synthesize datasets, aimed at  facilitating search-based testing on a traffic monitoring system
+that utilizes machine learning. Learn more about it here:
+
+- Publication: [DSC2023.pdf](DSC2023.pdf)
+- Presentation: [Data-synthetization-for-VV-of-ML-based-systems.pdf](Data-synthetization-for-VV-of-ML-based-systems.pdf)
+
+
+### Video Demo
+
+Scenario creation
+
+[![Scenario creation](http://img.youtube.com/vi/2LRw7jGvWLU/0.jpg)](http://www.youtube.com/watch?v=2LRw7jGvWLU "Scenario creation")
+
+Scenario generation
+
+[![Scenario generation](http://img.youtube.com/vi/bLVjQXtlwP0/0.jpg)](http://www.youtube.com/watch?v=bLVjQXtlwP0 "Scenario generation")
+
+### How it works
 
 ```
 │ Scenario.json
@@ -57,6 +69,18 @@ Build a scenario using the simulator and save it as [`scenario.JSON`](scenario.J
                                                      └────────────────────────────────┘                                                
 ```
 
+### Instruction
+Build a scenario using the simulator and save it as [`scenario.JSON`](scenario.JSON). You can see an example of such file [here](scenario.JSON). The important fields in the json file is described [here](InputExample.JSON)
+
+
+- place the simulator (Deccq_VX.0.a.b) in the root directory. (tested on V3.0.0.5)
+- place the `scenario.JSON` beside `scenario-manipulator.py`
+- install python dependencies (see `requirements.txt`) 
+- run `python scenario-manipulator.py` to generate scenarios
+- make sure that there is no issue and output folders and files are created inside `results` directory
+- Place a check to ensure that noise value is in the correct range
+
+### Internals
 vector_i determines the noise on parameter_i (lighting, time, paths and trajectories, etc).
 Vectors are normalised values (-1, +1) and results are a numerical value (can be normalised). Normalised "Vectors" and the "Results" are then used to train a linear regression model to find the effect of each parameter  
 
@@ -96,7 +120,8 @@ Semantic segmentation by BERGE simulator and bounding box detection by Unicam LP
 ![](logos/highway0.png)
 ![](logos/highway1.png)
 
-Highway and country road scenes, Åkareplatsen resecentrum and its 3D model in BERGE simulator
+Highway and country road scenes, Åkareplatsen resecentrum and its 3D model in BERGE simulator.
+
 
 ## Dataset
 A scenario is defined by  `scenario.JSON` and new scenarios are defined by mutating this basic scenario using noise vector `scenario_{NUM}.vec.json`.  We can run the simulator `scenarioCount` times (`NUM` < `scenarioCount`) to collect more and more data. 
